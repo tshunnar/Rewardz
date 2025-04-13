@@ -1,0 +1,18 @@
+{
+    "packages": [
+      "ruby_3_3",
+      "nodejs_20",
+      "yarn",
+      "mysql-client",
+      "libyaml",
+      "mariadb",
+      "pkg-config"
+    ],
+    "services": [],
+    "shell": {
+      "init_hook": [        
+        "gem install rails",
+        "cd backend"
+      ]
+    }
+  }

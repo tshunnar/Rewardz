@@ -1,0 +1,39 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "resolved": "github:NixOS/nixpkgs/2349f9de17183971db12ae9e0123dab132023bd7?lastModified=1744442362&narHash=sha256-i47t4DRIZgwBZw2Osbrp1OJhhO1k%2Fn%2BQzRx%2BTrmfE9Y%3D"
+    },
+    "libyaml": {
+      "resolved": "github:NixOS/nixpkgs/2349f9de17183971db12ae9e0123dab132023bd7?narHash=sha256-i47t4DRIZgwBZw2Osbrp1OJhhO1k%2Fn%2BQzRx%2BTrmfE9Y%3D#libyaml",
+      "source": "nixpkg"
+    },
+    "mariadb": {
+      "plugin_version": "0.0.4",
+      "resolved": "github:NixOS/nixpkgs/2349f9de17183971db12ae9e0123dab132023bd7?narHash=sha256-i47t4DRIZgwBZw2Osbrp1OJhhO1k%2Fn%2BQzRx%2BTrmfE9Y%3D#mariadb",
+      "source": "nixpkg"
+    },
+    "mysql-client": {
+      "resolved": "github:NixOS/nixpkgs/2349f9de17183971db12ae9e0123dab132023bd7?narHash=sha256-i47t4DRIZgwBZw2Osbrp1OJhhO1k%2Fn%2BQzRx%2BTrmfE9Y%3D#mysql-client",
+      "source": "nixpkg"
+    },
+    "nodejs_20": {
+      "plugin_version": "0.0.2",
+      "resolved": "github:NixOS/nixpkgs/2349f9de17183971db12ae9e0123dab132023bd7?narHash=sha256-i47t4DRIZgwBZw2Osbrp1OJhhO1k%2Fn%2BQzRx%2BTrmfE9Y%3D#nodejs_20",
+      "source": "nixpkg"
+    },
+    "pkg-config": {
+      "resolved": "github:NixOS/nixpkgs/2349f9de17183971db12ae9e0123dab132023bd7?narHash=sha256-i47t4DRIZgwBZw2Osbrp1OJhhO1k%2Fn%2BQzRx%2BTrmfE9Y%3D#pkg-config",
+      "source": "nixpkg"
+    },
+    "ruby_3_3": {
+      "plugin_version": "0.0.2",
+      "resolved": "github:NixOS/nixpkgs/2349f9de17183971db12ae9e0123dab132023bd7?narHash=sha256-i47t4DRIZgwBZw2Osbrp1OJhhO1k%2Fn%2BQzRx%2BTrmfE9Y%3D#ruby_3_3",
+      "source": "nixpkg"
+    },
+    "yarn": {
+      "resolved": "github:NixOS/nixpkgs/2349f9de17183971db12ae9e0123dab132023bd7?narHash=sha256-i47t4DRIZgwBZw2Osbrp1OJhhO1k%2Fn%2BQzRx%2BTrmfE9Y%3D#yarn",
+      "source": "nixpkg"
+    }
+  }
+}
