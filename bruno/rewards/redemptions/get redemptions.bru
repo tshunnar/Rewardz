@@ -1,0 +1,15 @@
+meta {
+  name: get redemptions
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3000/api/v1/redemptions?page=1
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 1
+}

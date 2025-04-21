@@ -1,0 +1,18 @@
+meta {
+  name: create redemption
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/api/v1/redemptions
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "user_id":24,
+    "reward_id":18
+  }
+}

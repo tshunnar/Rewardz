@@ -1,0 +1,19 @@
+meta {
+  name: update reward
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:3000/api/v1/rewards/20
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "Synergistic Steel Pants",
+    "description": "amazing pants for great people",
+    "cost": 10
+  }
+}

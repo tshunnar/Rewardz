@@ -2,8 +2,9 @@
 
 # Set default values
 MYSQL_CONTAINER_NAME="local-mysql-db-dev"
-MYSQL_ROOT_PASSWORD="password"
-MYSQL_DATABASE="rewardz-db"
+MYSQL_ROOT_PASSWORD="password123"
+MYSQL_DATABASE_DEV="rewardz_db_dev"
+MYSQL_DATABASE_TEST="rewardz_db_test"
 MYSQL_PORT=3306
 
 # Check if the container already exists
@@ -14,9 +15,19 @@ else
     echo "Creating and starting a new MySQL container named '$MYSQL_CONTAINER_NAME'..."
     docker run --name $MYSQL_CONTAINER_NAME \
         -e MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD \
-        -e MYSQL_DATABASE=$MYSQL_DATABASE \
+        -e MYSQL_DATABASE=$MYSQL_DATABASE_DEV \
         -p $MYSQL_PORT:3306 \
         -d mysql:8.0
+
+    # Wait for MySQL to initialize
+    echo "Waiting for MySQL to initialize..."
+    sleep 20
+
+    # Create databases
+    echo "Creating test database '$MYSQL_DATABASE_TEST'..."
+    docker exec -i $MYSQL_CONTAINER_NAME mysql -uroot -p$MYSQL_ROOT_PASSWORD <<SQL
+    CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE_TEST;
+SQL
 fi
 
 # Exit immediately if a command exits with a non-zero status
