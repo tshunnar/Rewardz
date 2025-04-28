@@ -1,0 +1,52 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5678:5678"
+    environment:
+      RAILS_ENV: production
+      DATABASE_HOST: db
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: password123
+      DATABASE_NAME: rewardz_db
+      SECRET_KEY_BASE: f5351dbc97732e4841925b51cd27507e77f53f9f6ed158eb60da1c4945cf3c9ac104bc0da9e316db21019b1552300c503bebaeddc7ede7b9e7296d0412126aa8
+    depends_on:
+      - db
+    command: >
+      bash -c "
+      rails db:prepare &&
+      rails db:seed &&
+      rails server -b 0.0.0.0"
+
+  frontend:
+    build:
+      context: ./frontend2
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      VITE_API_URL: http://localhost:5678/api
+
+  db:
+    image: mysql:8.0
+    container_name: local-mysql-db-prod
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password123
+      MYSQL_DATABASE: rewardz-db
+    volumes:
+      - db_data:/var/lib/mysql
+
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: password123
+
+volumes:
+  db_data:

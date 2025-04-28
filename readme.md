@@ -1,3 +1,31 @@
+# Deploy Rewardz app locally and run it
+
+1. Build and Start the Containers
+Run the following command to build and start all the containers
+``docker-compose up --build``
+This command will:
+* Build the backend and frontend images.
+* Start the backend, frontend, MySQL database, and phpMyAdmin containers.
+
+2. Access the Application
+Once the containers are running, you can access the application at the following URLs:
+
+*   Frontend: http://localhost
+*   Backend API: http://localhost:5678
+*   phpMyAdmin: http://localhost:8080
+*   Use the following credentials to log in:
+    * Username: root
+    * Password: password123
+
+3. Verify Database Seeding
+The database is automatically seeded with initial data during container startup. If the database is not seeded, you can manually seed it:
+```
+docker-compose exec backend bash
+rails db:seed
+```
+----
+----
+
 # Rewardz Backend Setup Guide
 
 This document provides instructions for setting up and running the Rewardz backend application. Follow the steps below to configure your development environment, run the application, and test its functionality.
@@ -69,7 +97,7 @@ To start the Rails backend server:
 - Start the Rails server.
     ``rails server``
 
-The application will be accessible at http://localhost:3000.
+The application will be accessible at http://localhost:5678.
 
 ## 5. Testing API Endpoints with Bruno
 

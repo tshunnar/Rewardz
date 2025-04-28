@@ -33,16 +33,20 @@ test:
 production:
   primary:
     <<: *default
-    database: rewardz-db
-  cache:
-    <<: *default
-    database: rewardz-db
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *default
-    database: rewardz-db
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *default
-    database: rewardz-db
-    migrations_paths: db/cable_migrate
+    database: <%= ENV.fetch("DATABASE_NAME") %>
+    username: root
+    password: password123
+    host:  <%= ENV.fetch("DATABASE_HOST") %>
+    port: 3306
+  # cache:
+  #   <<: *default
+  #   database: rewardz-db
+  #   migrations_paths: db/cache_migrate
+  # queue:
+  #   <<: *default
+  #   database: rewardz-db
+  #   migrations_paths: db/queue_migrate
+  # cable:
+  #   <<: *default
+  #   database: rewardz-db
+  #   migrations_paths: db/cable_migrate

@@ -69,7 +69,7 @@ To start the Rails backend server:
 - Start the Rails server.
     ``rails server``
 
-The application will be accessible at http://localhost:3000.
+The application will be accessible at http://localhost:5678.
 
 ## 5. Testing API Endpoints with Bruno
 
