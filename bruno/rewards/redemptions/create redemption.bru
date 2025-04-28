@@ -5,14 +5,14 @@ meta {
 }
 
 post {
-  url: http://localhost:3000/api/v1/redemptions
+  url: http://localhost:{{port_number}}/api/v1/redemptions
   body: json
   auth: inherit
 }
 
 body:json {
   {
-    "user_id":24,
-    "reward_id":18
+    "user_id":49,
+    "reward_id":38
   }
 }

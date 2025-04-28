@@ -49,6 +49,15 @@ module Api
         }
       end
 
+      def byemail
+        @user = User.find_by(email: params[:email])
+        if @user
+          render json: @user, status: :ok
+        else
+          render json: { error: "User not found" }, status: :not_found
+        end
+      end
+
       private
 
       def set_user

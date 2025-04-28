@@ -1,0 +1,15 @@
+meta {
+  name: get user by email
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:{{port_number}}/api/v1/users/byemail?email=a@b.c
+  body: json
+  auth: inherit
+}
+
+params:query {
+  email: a@b.c
+}

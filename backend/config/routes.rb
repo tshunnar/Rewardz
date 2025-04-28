@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index, :show, :create, :destroy] do
         get :redemptions, on: :member
+        get :byemail, on: :collection
       end
 
       resources :rewards

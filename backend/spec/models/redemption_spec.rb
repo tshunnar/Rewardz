@@ -43,4 +43,18 @@ RSpec.describe Redemption, type: :model do
       expect { redemption.destroy }.to change { user.reload.points_balance }.from(50).to(100)
     end
   end
+
+  describe 'redemption_cost' do
+    it 'sets redemption_cost to reward.cost if not provided' do
+      redemption.redemption_cost = nil
+      redemption.save
+      expect(redemption.redemption_cost).to eq(reward.cost)
+    end
+
+    it 'does not override redemption_cost if provided' do
+      redemption.redemption_cost = 30
+      redemption.save
+      expect(redemption.redemption_cost).to eq(30)
+    end
+  end
 end
