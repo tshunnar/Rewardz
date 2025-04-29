@@ -1,3 +1,6 @@
+# RewardZ App 
+* Created By: Thaer Shunnar
+----
 # Deploy and Run Rewardz app locally
 
 1. Build and Start the Containers
