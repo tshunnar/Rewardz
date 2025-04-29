@@ -1,4 +1,4 @@
-# Deploy Rewardz app locally and run it
+# Deploy and Run Rewardz app locally
 
 1. Build and Start the Containers
 Run the following command to build and start all the containers
@@ -10,12 +10,13 @@ This command will:
 2. Access the Application
 Once the containers are running, you can access the application at the following URLs:
 
-*   Frontend: http://localhost
+*   Frontend: http://localhost:3000
+    * To login, you need to create an account using an email and a name only. No requirement for a password.
 *   Backend API: http://localhost:5678
 *   phpMyAdmin: http://localhost:8080
-*   Use the following credentials to log in:
-    * Username: root
-    * Password: password123
+    *   Use the following credentials to log in to the DB:
+        * Username: root
+        * Password: password123
 
 3. Verify Database Seeding
 The database is automatically seeded with initial data during container startup. If the database is not seeded, you can manually seed it:

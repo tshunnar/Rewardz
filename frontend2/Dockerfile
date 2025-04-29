@@ -1,13 +1,13 @@
-FROM node:20.19-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
-RUN npm install
-
+COPY package*.json ./
+RUN npm ci
 COPY . .
-
 RUN npm run build
+RUN npm install -g serve
+EXPOSE 3000
 
-EXPOSE 80
-CMD ["npx", "serve", "-s", "dist"]
+# Start the application
+CMD ["serve", "-s", "dist", "-l", "3000"]
